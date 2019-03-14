@@ -16,23 +16,20 @@ a_frame.grid()
 
 grid_of_buttons = []
 
-def change_label( t ):
-    a_label.config( text = "You pressed button {}".format( t )  )
-
 
 for i in range( 3 ):
     for j in range( 3 ):
-        new_button = tk.Button( a_frame , text = '( {} , {} )'.format( i , j ) )
-
-        new_button.grid( row = 2 + j  , column = i )
+        button_text = '( {} , {} )'.format( i , j )
+        grid_button = tk.Button( a_frame , text = button_text )
 
         def button_func():
-            a_label.config( text = "You pressed button {}".format( ( i , j  ) )  )
-            
+            a_label.config( text = 'You pressed button ' + button_text )
 
-        new_button.config( command = button_func )
+        grid_button.config( command = button_func )
 
-        grid_of_buttons.append( new_button )       
+        grid_button.grid( row = j  , column = i )
+
+        grid_of_buttons.append( grid_button )       
 
 
 
