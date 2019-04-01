@@ -3,7 +3,7 @@ import tkinter as tk
 root = tk.Tk()
 root.geometry( '200x200' )
 
-class MyButton( tk.Frame ):
+class FrameWithButton( tk.Frame ):
     def __init__( self , parent ):
 
         # Initialize
@@ -35,6 +35,6 @@ class MyButton( tk.Frame ):
     def do_change( self ):
         self.my_label.config( text = 'You pressed the button!' )
 
-MyButton( root ).pack()
+FrameWithButton( root ).pack()
 
 root.mainloop()
